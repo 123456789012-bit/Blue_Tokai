@@ -1,4 +1,4 @@
-import { ArrowRight, Mountain, MapPin, Droplet } from 'lucide-react';
+import { Mountain, MapPin, Droplet } from 'lucide-react';
 import { Estate } from '../types/estate';
 
 interface EstateCardProps {
@@ -129,16 +129,6 @@ export default function EstateCard({ estate }: EstateCardProps) {
           </ul>
         </div>
 
-        {/* CTA Button */}
-        <button className="w-full bg-gradient-to-r from-[#0E4B5A] to-[#0E4B5A]/90 text-white py-4 rounded-full flex items-center justify-center gap-2 hover:from-[#0E4B5A]/90 hover:to-[#0E4B5A] transition-all duration-300 group shadow-lg hover:shadow-xl">
-          <span 
-            className="font-medium text-base" 
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            Explore this Estate
-          </span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-        </button>
       </div>
     </div>
   );
