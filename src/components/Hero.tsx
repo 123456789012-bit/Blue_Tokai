@@ -1,3 +1,5 @@
+import logo from "./image.png";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
@@ -25,6 +27,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Logo/Brand */}
         <div className="mb-8">
+          <div className="flex justify-center"><img src={logo} className="w-20"></img></div>
           <h1 
             className="text-6xl md:text-8xl font-normal text-[#0E4B5A] mb-4" 
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
