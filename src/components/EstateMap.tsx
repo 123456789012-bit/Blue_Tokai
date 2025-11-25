@@ -13,18 +13,24 @@ export default function EstateMap({ selectedEstate, onEstateSelect }: EstateMapP
   const [hoveredEstate, setHoveredEstate] = useState<Estate | null>(null);
 
   return (
-    <section className="py-20 px-6">
+    <section id="estate-map" className="py-20 px-6 bg-gradient-to-b from-white to-[#F5EFE7]">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-light text-[#0E4B5A] text-center mb-4">
+        <h2 
+          className="text-5xl md:text-6xl font-light text-[#0E4B5A] text-center mb-4" 
+          style={{ fontFamily: 'Cormorant Garamond, serif' }}
+        >
           Our Estate Collection
         </h2>
-        <p className="text-center text-[#4A2C1A]/70 mb-16 max-w-2xl mx-auto">
+        <p 
+          className="text-center text-[#4A2C1A]/70 mb-16 max-w-2xl mx-auto text-lg" 
+          style={{ fontFamily: 'Inter, sans-serif' }}
+        >
           Each pin represents a carefully selected estate where our coffee journey begins
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-[#0E4B5A]/10">
+            <div className="bg-white rounded-3xl shadow-2xl p-8 border border-[#0E4B5A]/5">
               <IndiaMap
                 estates={estates}
                 hoveredEstate={hoveredEstate}
@@ -35,7 +41,10 @@ export default function EstateMap({ selectedEstate, onEstateSelect }: EstateMapP
             </div>
 
             <div className="mt-6 flex justify-center">
-              <div className="inline-flex items-center gap-6 px-6 py-3 bg-white/80 rounded-full border border-[#0E4B5A]/10">
+              <div 
+                className="inline-flex items-center gap-6 px-6 py-3 bg-white/90 rounded-full border border-[#0E4B5A]/10 shadow-md backdrop-blur-sm"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-[#C27A50]"></div>
                   <span className="text-sm text-[#4A2C1A]">Estate Location</span>
@@ -52,11 +61,11 @@ export default function EstateMap({ selectedEstate, onEstateSelect }: EstateMapP
             {(selectedEstate || hoveredEstate) ? (
               <EstateCard estate={selectedEstate || hoveredEstate!} />
             ) : (
-              <div className="bg-gradient-to-br from-[#0E4B5A]/5 to-[#7C8A6E]/5 rounded-2xl p-12 border border-[#0E4B5A]/10 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C27A50]/20 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-[#7C3A6E]/5 via-[#F5EFE7] to-[#C27A50]/5 rounded-3xl p-12 border border-[#0E4B5A]/10 text-center shadow-lg">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#C27A50]/20 flex items-center justify-center">
                   <svg
-                    width="32"
-                    height="32"
+                    width="36"
+                    height="36"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -67,10 +76,16 @@ export default function EstateMap({ selectedEstate, onEstateSelect }: EstateMapP
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                 </div>
-                <p className="text-lg font-light text-[#4A2C1A] mb-2">
+                <p 
+                  className="text-2xl font-light text-[#4A2C1A] mb-3" 
+                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                >
                   Select an Estate
                 </p>
-                <p className="text-sm text-[#4A2C1A]/60">
+                <p 
+                  className="text-base text-[#4A2C1A]/60" 
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                >
                   Hover or tap on a pin to explore our coffee estates
                 </p>
               </div>

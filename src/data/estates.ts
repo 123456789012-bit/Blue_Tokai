@@ -10,7 +10,7 @@ export const estates: Estate[] = [
     processing: 'Washed & Natural',
     flavorNotes: ['Chocolate', 'Caramel', 'Citrus', 'Floral'],
     signatureBrews: ['Attikan Estate', 'Sunkada Estate'],
-    coordinates: { x: 384, y: 480 }
+    coordinates: { x: 225, y: 720 }
   },
   {
     id: 'coorg',
@@ -21,7 +21,7 @@ export const estates: Estate[] = [
     processing: 'Honey & Washed',
     flavorNotes: ['Berries', 'Wine', 'Dark Chocolate', 'Spice'],
     signatureBrews: ['Thogarihunkal Estate', 'Ratnagiri Estate'],
-    coordinates: { x: 402, y: 495 }
+    coordinates: { x: 240, y: 750 }
   },
   {
     id: 'araku',
@@ -32,7 +32,7 @@ export const estates: Estate[] = [
     processing: 'Natural',
     flavorNotes: ['Tropical Fruit', 'Honey', 'Nuts', 'Cocoa'],
     signatureBrews: ['Araku Single Origin'],
-    coordinates: { x: 435, y: 415 }
+    coordinates: { x: 400, y: 620 }
   },
   {
     id: 'wayanad',
@@ -43,7 +43,7 @@ export const estates: Estate[] = [
     processing: 'Washed',
     flavorNotes: ['Butter', 'Caramel', 'Citrus', 'Clean'],
     signatureBrews: ['Wayanad Single Origin'],
-    coordinates: { x: 390, y: 530 }
+    coordinates: { x: 230, y: 780 }
   },
   {
     id: 'biligiris',
@@ -54,7 +54,7 @@ export const estates: Estate[] = [
     processing: 'Natural & Honey',
     flavorNotes: ['Strawberry', 'Vanilla', 'Caramel', 'Smooth'],
     signatureBrews: ['BR Hills Estate'],
-    coordinates: { x: 415, y: 500 }
+    coordinates: { x: 270, y: 770 }
   },
   {
     id: 'shevaroys',
@@ -65,6 +65,6 @@ export const estates: Estate[] = [
     processing: 'Washed',
     flavorNotes: ['Jasmine', 'Lemon', 'Green Apple', 'Tea-like'],
     signatureBrews: ['Shevaroy Estate'],
-    coordinates: { x: 415, y: 525 }
+    coordinates: { x: 310, y: 765 }
   }
 ];

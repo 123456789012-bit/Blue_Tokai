@@ -7,63 +7,97 @@ interface EstateCardProps {
 
 export default function EstateCard({ estate }: EstateCardProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#0E4B5A]/10 transition-all duration-500 animate-fadeIn">
-      <div className="relative h-48 bg-gradient-to-br from-[#7C8A6E]/20 to-[#0E4B5A]/20 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg width="120" height="120" viewBox="0 0 120 120" className="text-[#0E4B5A] opacity-20">
-            <circle cx="60" cy="40" r="8" fill="none" stroke="currentColor" strokeWidth="1" />
-            <ellipse cx="60" cy="50" rx="12" ry="6" fill="none" stroke="currentColor" strokeWidth="1" />
-            <path
-              d="M 48 56 Q 48 70, 60 80 Q 72 70, 72 56"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-            />
-            <path d="M 45 62 L 35 85 Q 35 90, 40 90 L 80 90 Q 85 90, 85 85 L 75 62" fill="none" stroke="currentColor" strokeWidth="1" />
-            <line x1="40" y1="75" x2="80" y2="75" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
+    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#0E4B5A]/5 transform transition-all duration-500 animate-fadeIn">
+      {/* Header with gradient */}
+      <div className="relative bg-gradient-to-br from-[#0E4B5A] to-[#0E4B5A]/80 p-8 text-white overflow-hidden">
+        {/* Decorative coffee cup */}
+        <div className="absolute top-4 right-4 opacity-10">
+          <svg width="100" height="100" viewBox="0 0 120 120" className="text-white">
+            <circle cx="60" cy="40" r="8" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <ellipse cx="60" cy="50" rx="12" ry="6" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M 48 56 Q 48 70, 60 80 Q 72 70, 72 56" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M 45 62 L 35 85 Q 35 90, 40 90 L 80 90 Q 85 90, 85 85 L 75 62" fill="none" stroke="currentColor" strokeWidth="1.5" />
           </svg>
         </div>
 
-        <div className="absolute top-4 right-4">
-          <div className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs text-[#0E4B5A] font-medium">
+        <h3 
+          className="text-4xl font-light mb-2 relative z-10" 
+          style={{ fontFamily: 'Cormorant Garamond, serif' }}
+        >
+          {estate.name}
+        </h3>
+        <p 
+          className="text-[#F5EFE7]/90 text-base flex items-center gap-2 relative z-10" 
+          style={{ fontFamily: 'Inter, sans-serif' }}
+        >
+          <MapPin className="w-4 h-4" />
+          {estate.location}
+        </p>
+        
+        <div className="absolute top-4 left-4">
+          <div className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium">
             {estate.region}
           </div>
         </div>
       </div>
 
-      <div className="p-8">
-        <h3 className="text-2xl font-light text-[#0E4B5A] mb-2">{estate.name}</h3>
-
-        <div className="flex items-center gap-2 text-sm text-[#4A2C1A]/70 mb-6">
-          <MapPin className="w-4 h-4" />
-          <span>{estate.location}</span>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="bg-[#F5EFE7] rounded-lg p-4">
-            <div className="flex items-center gap-2 text-[#C27A50] mb-1">
+      {/* Content */}
+      <div className="p-8 space-y-6">
+        {/* Details Grid */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-gradient-to-br from-[#F5EFE7] to-[#C27A50]/10 rounded-xl p-4 border border-[#C27A50]/10">
+            <div className="flex items-center gap-2 text-[#C27A50] mb-2">
               <Mountain className="w-4 h-4" />
-              <span className="text-xs uppercase tracking-wide">Altitude</span>
+              <span 
+                className="text-xs uppercase tracking-wider font-medium" 
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                Altitude
+              </span>
             </div>
-            <p className="text-sm text-[#4A2C1A] font-medium">{estate.altitude}</p>
+            <p 
+              className="text-base text-[#4A2C1A] font-medium" 
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              {estate.altitude}
+            </p>
           </div>
 
-          <div className="bg-[#F5EFE7] rounded-lg p-4">
-            <div className="flex items-center gap-2 text-[#C27A50] mb-1">
+          <div className="bg-gradient-to-br from-[#F5EFE7] to-[#7C3A6E]/10 rounded-xl p-4 border border-[#7C3A6E]/10">
+            <div className="flex items-center gap-2 text-[#7C3A6E] mb-2">
               <Droplet className="w-4 h-4" />
-              <span className="text-xs uppercase tracking-wide">Process</span>
+              <span 
+                className="text-xs uppercase tracking-wider font-medium" 
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                Process
+              </span>
             </div>
-            <p className="text-sm text-[#4A2C1A] font-medium">{estate.processing}</p>
+            <p 
+              className="text-base text-[#4A2C1A] font-medium" 
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              {estate.processing}
+            </p>
           </div>
         </div>
 
-        <div className="mb-6">
-          <h4 className="text-xs uppercase tracking-wide text-[#C27A50] mb-3">Flavor Notes</h4>
+        <div className="h-px bg-gradient-to-r from-transparent via-[#C27A50]/30 to-transparent"></div>
+
+        {/* Flavor Notes */}
+        <div>
+          <h4 
+            className="text-sm text-[#C27A50] mb-3 uppercase tracking-wider font-semibold" 
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            Flavor Profile
+          </h4>
           <div className="flex flex-wrap gap-2">
             {estate.flavorNotes.map((note) => (
               <span
                 key={note}
-                className="px-3 py-1 bg-gradient-to-r from-[#0E4B5A]/5 to-[#7C8A6E]/5 text-[#4A2C1A] text-sm rounded-full border border-[#0E4B5A]/10"
+                className="px-4 py-2 bg-gradient-to-r from-[#C27A50]/10 to-[#7C3A6E]/10 text-[#4A2C1A] rounded-full text-sm border border-[#C27A50]/20 font-medium"
+                style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 {note}
               </span>
@@ -71,21 +105,39 @@ export default function EstateCard({ estate }: EstateCardProps) {
           </div>
         </div>
 
-        <div className="mb-6 pb-6 border-b border-[#0E4B5A]/10">
-          <h4 className="text-xs uppercase tracking-wide text-[#C27A50] mb-3">Signature Brews</h4>
+        <div className="h-px bg-gradient-to-r from-transparent via-[#C27A50]/30 to-transparent"></div>
+
+        {/* Signature Brews */}
+        <div>
+          <h4 
+            className="text-sm text-[#C27A50] mb-3 uppercase tracking-wider font-semibold" 
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            Signature Brews
+          </h4>
           <ul className="space-y-2">
             {estate.signatureBrews.map((brew) => (
-              <li key={brew} className="flex items-center gap-2 text-sm text-[#4A2C1A]">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#C27A50]"></div>
-                {brew}
+              <li 
+                key={brew} 
+                className="flex items-center gap-3 text-[#4A2C1A]" 
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                <div className="w-2 h-2 rounded-full bg-[#C27A50]"></div>
+                <span className="text-base">{brew}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <button className="w-full bg-gradient-to-r from-[#0E4B5A] to-[#0E4B5A]/90 text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:from-[#0E4B5A]/90 hover:to-[#0E4B5A] transition-all duration-300 group">
-          <span className="font-light">Explore this Estate</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        {/* CTA Button */}
+        <button className="w-full bg-gradient-to-r from-[#0E4B5A] to-[#0E4B5A]/90 text-white py-4 rounded-full flex items-center justify-center gap-2 hover:from-[#0E4B5A]/90 hover:to-[#0E4B5A] transition-all duration-300 group shadow-lg hover:shadow-xl">
+          <span 
+            className="font-medium text-base" 
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            Explore this Estate
+          </span>
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </button>
       </div>
     </div>
